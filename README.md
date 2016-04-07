@@ -1,0 +1,2 @@
+# Swift2Parse
+Helps you understand how to parse JSON in Swift 2. It’s relatively simple once you understand optional binding and the do/try/catch syntax in Swift 2. So many people seem to want grab a third-party library to parse JSON, but for most use cases, I see very little benefit to using a third-party library to do something that’s so simple. You don’t need a third-party library for everything.
