@@ -1,0 +1,22 @@
+import Foundation
+
+let blogsURL: NSURL = NSURL(string: "https://raw.githubusercontent.com/JerwinPRO/JSONSample/master/parse.json")!
+let data = NSData(contentsOfURL: blogsURL)!
+
+var names = [String]()
+
+do {
+    let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+    
+    if let blogs = json["blog"] as? [[String: AnyObject]] {
+        for blog in blogs {
+            if let name = blog["name"] as? String {
+                names.append(name)
+            }
+        }
+    }
+} catch {
+    print("error serializing JSON: \(error)")
+}
+
+print(names)
