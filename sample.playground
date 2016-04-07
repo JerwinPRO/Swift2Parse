@@ -8,7 +8,7 @@ var names = [String]()
 do {
     let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
     
-    if let blogs = json["blog"] as? [[String: AnyObject]] {
+    if let blogs = json["blogs"] as? [[String: AnyObject]] {
         for blog in blogs {
             if let name = blog["name"] as? String {
                 names.append(name)
